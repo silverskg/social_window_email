@@ -1,5 +1,22 @@
-<h1>Inquiry#recevied_email</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/inquiry_mailer/recevied_email.html.erb
-</p>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      .userName {
+        font-weight: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><%= @user.name %> 様</h2>
+    <p>
+      この度は<span class="userName"><%= @user.name %></span>様の社会の窓が空いていることについてお知らせします。
+    </p>
+    <div>【<%= @user.name %>様との関係】</div>
+    <div><%= @user.relationship%></div>
+    <div>【目撃した人からのお言葉】</div>
+    <div><%= @user.content %></div>
+  </body>
+</html>

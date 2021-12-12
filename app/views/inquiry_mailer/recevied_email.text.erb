@@ -1,3 +1,13 @@
-Inquiry#recevied_email
+===============================
+<%= @user.name %>様
+===============================
 
-<%= @greeting %>, find me in app/views/inquiry_mailer/recevied_email.text.erb
+この度は<%= @user.name %>様の社会の窓が空いていることについてお知らせします。
+
+社会の窓が空いている時ところを目撃した人の情報です。
+
+【<%= @user.name %>様との関係】
+<%= @user.relationship%>
+
+【目撃した人からのお言葉】
+<%= @user.content %>
