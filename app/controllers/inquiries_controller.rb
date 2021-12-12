@@ -6,15 +6,14 @@ class InquiriesController < ApplicationController
   def confirm
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
-      render "confirm"
+      render 'confirm'
     else
       render :new
     end
   end
 
-  def thanks
-  end
-  
+  def thanks; end
+
   private
 
   def inquiry_params
