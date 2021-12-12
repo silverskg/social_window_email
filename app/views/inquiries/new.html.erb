@@ -1,2 +1,26 @@
-<h1>Inquiries#new</h1>
-<p>Find me in app/views/inquiries/new.html.erb</p>
+<div class='topPage'>
+  <div class="container">
+    <h1>社会の窓通知代理サービス</h1>
+    <p>あなたの周りにいる友人の男性の社会の窓が空いていたら気軽に「社会の窓空いているよ？」といえるでしょうか？そんな方の代理をいたします。
+    </p>
+    <%= form_with(model: @inquiry, url: inquiries_confirm_path, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "お名前" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :relationship %>
+        <%= f.select(:relationship, [["友人", "友人"], ["夫婦", "夫婦"], ["恋人", "恋人"], ["上司", "上司"], ["先輩", "先輩"]], {}, class: "form-control") %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control", placeholder: "伝えたいことがあれば入力してください" %>
+      </div>
+        <div class="text-center"><%= f.submit '確認画面へ', class: 'btn btn-primary' %></div>
+    <% end %>
+  </div>
+</div>
