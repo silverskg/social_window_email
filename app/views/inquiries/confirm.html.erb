@@ -1,2 +1,43 @@
-<h1>Inquiries#confirm</h1>
-<p>Find me in app/views/inquiries/confirm.html.erb</p>
+<div class="confirmPage">
+  <div class='container'>
+    <h1 class="confirmPage_title">お問い合わせ内容</h1>
+    <%= form_with model: @inquiry, url: inquiries_thanks_path, method: :post, local: true do |f| %>
+      <div class="confirmForm_item">
+        <h3>社会の窓が空いている人のお名前</h3>
+        <div>
+          <%= f.hidden_field :name %>
+          <%= @inquiry.name %>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>社会の窓が空いている人のメールアドレス</h3>
+        <div>
+          <%= f.hidden_field :email %>
+          <%= @inquiry.email %>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>社会の窓が空いている人との関係</h3>
+        <div>
+          <%= f.hidden_field :relationship %>
+          <%= @inquiry.relationship %>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>何か伝えたいこと</h3>
+        <div>
+          <% if @inquiry.content.empty? %>
+            特になし
+          <% else %>
+            <%= @inquiry.content %>
+          <% end%>
+          <%= f.hidden_field :content %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to "入力画面に戻る", root_path, class: "btn btn-info"%>
+        <%= f.submit '送信する', :class => 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>
