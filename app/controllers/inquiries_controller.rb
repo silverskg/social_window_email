@@ -12,7 +12,10 @@ class InquiriesController < ApplicationController
     end
   end
 
-  def thanks; end
+  def thanks
+    @inquiry = Inquiry.new(inquiry_params)
+    InquiryMailer.recevied_email(@inquiry).deliver_now
+  end
 
   private
 
