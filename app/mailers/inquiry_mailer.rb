@@ -7,7 +7,7 @@ class InquiryMailer < ApplicationMailer
   #
   def recevied_email(user)
     @user = user
-    mail to: @user.email,
-      subject: "【#{@user.name}様の社会の窓についてお知らせがあります】"
+    mail to: ENV['LOGIN_NAME'],
+      subject: "【#{@user.name}からアンケートの回答があります】"
   end
 end

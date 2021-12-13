@@ -1,7 +1,8 @@
 <div class='topPage'>
   <div class="container">
-    <h1>社会の窓通知代理サービス</h1>
-    <p>あなたの周りにいる友人の男性の社会の窓が空いていたら気軽に「社会の窓空いているよ？」といえるでしょうか？そんな方の代理をいたします。
+    <h1 class="text-center">簡単アンケート</h1>
+    <p>チラシを見て頂いた方にアンケート調査をしております。<br>30秒ほどの簡単なアンケートになります。<br>
+    お答え頂いた方限定に10％割引をつけさせて頂きます。
     </p>
     <%= form_with(model: @inquiry, url: inquiries_confirm_path, local: true) do |f| %>
       <% if @inquiry.errors.any? %>
@@ -26,7 +27,7 @@
       </div>
       <div class="form-group">
         <%= f.label :relationship %>
-        <%= f.select(:relationship, [["友人", "友人"], ["夫婦", "夫婦"], ["恋人", "恋人"], ["上司", "上司"], ["先輩", "先輩"]], {}, class: "form-control") %>
+        <%= f.select(:relationship, [["見やすかった", "見やすかった"], ["見にくい", "見にくい"],  ["普通", "普通"]],{include_blank: "選択して下さい"}, class: "form-control") %>
       </div>
       <div class="form-group">
         <%= f.label :content %>
