@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      inquiry:
+        name: "お名前"
+        email: "メールアドレス"
+        relationship: "チラシ内容は"
+        content: "何かお困り"
